@@ -147,3 +147,19 @@ User → index.html (View)
          ↓
     profile.jsp / viewProfiles.jsp (View)
 ```
+## Screenshots
+
+### Create Profile
+![Create Profile](screenshots/create%20profile.png)
+
+### View All Profiles
+![View Profiles](screenshots/view%20profile.png)
+
+### Edit Profile
+![Edit Profile](screenshots/edit%20profile.png)
+
+### Delete Profile
+![Delete Profile](screenshots/delete%20profile.png)
+
+### Search Profile
+![Search Profile](screenshots/search%20nama.png)
