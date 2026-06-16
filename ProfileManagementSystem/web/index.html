@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .navbar-brand {
+            color: white; font-size: 1.3em; font-weight: 700;
+            text-decoration: none; display: flex; align-items: center; gap: 10px;
+        }
+        .navbar-nav { display: flex; gap: 10px; }
+        .nav-link {
+            color: rgba(255,255,255,0.85); text-decoration: none;
+            padding: 8px 18px; border-radius: 25px; font-size: 0.9em;
+            font-weight: 500; transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-link.active { background: white; color: #6c5ce7; }
+        .main-content {
+            flex: 1; display: flex; justify-content: center;
+            align-items: center; padding: 40px 20px;
+        }
+        .form-card {
+            background: white; width: 100%; max-width: 560px;
+            border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.2); overflow: hidden;
+        }
+        .form-header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            padding: 35px 40px; text-align: center; color: white;
+        }
+        .form-header i { font-size: 3em; margin-bottom: 10px; display: block; }
+        .form-header h2 { font-size: 1.5em; font-weight: 700; }
+        .form-header p { font-size: 0.85em; opacity: 0.85; margin-top: 5px; }
+        .form-body { padding: 35px 40px; }
+        .input-group { margin-bottom: 18px; }
+        .input-group label {
+            display: block; color: #4a5568; font-size: 0.85em;
+            font-weight: 600; margin-bottom: 7px;
+        }
+        .input-group label .required { color: #e53e3e; }
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0;
+            border-radius: 10px; outline: none; font-family: 'Poppins', sans-serif;
+            font-size: 0.9em; color: #2d3748; background: #f7fafc; transition: all 0.3s;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: #6c5ce7; background: white;
+            box-shadow: 0 0 0 4px rgba(108,92,231,0.1);
+        }
+        .input-group textarea { resize: vertical; min-height: 90px; }
+        .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white; border: none; border-radius: 12px;
+            font-family: 'Poppins', sans-serif; font-size: 1em; font-weight: 600;
+            cursor: pointer; transition: all 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(108,92,231,0.4); }
+        .form-footer { text-align: center; margin-top: 18px; font-size: 0.85em; color: #718096; }
+        .form-footer a { color: #6c5ce7; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-id-card"></i> Profile Management System
+        </a>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link active"><i class="fas fa-plus"></i> Add Profile</a>
+            <a href="ProfileServlet?action=view" class="nav-link"><i class="fas fa-users"></i> View All</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="form-card">
+            <div class="form-header">
+                <i class="fas fa-user-plus"></i>
+                <h2>Create New Profile</h2>
+                <p>Fill in the details below to add a student profile</p>
+            </div>
+            <div class="form-body">
+                <form action="ProfileServlet" method="POST">
+                    <input type="hidden" name="action" value="add">
+                    <div class="row-2">
+                        <div class="input-group">
+                            <label>Student ID <span class="required">*</span></label>
+                            <input type="text" name="studentID" required placeholder="e.g. 2025428096">
+                        </div>
+                        <div class="input-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="name" required placeholder="e.g. Nur Nazifa Humairah">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Programme <span class="required">*</span></label>
+                        <input type="text" name="programme" required placeholder="e.g. CS584 / Bachelor of Computer Science">
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" required placeholder="e.g. nazifa@student.uitm.edu.my">
+                    </div>
+                    <div class="input-group">
+                        <label>Hobbies</label>
+                        <input type="text" name="hobbies" placeholder="e.g. Reading, Coding, Photography">
+                    </div>
+                    <div class="input-group">
+                        <label>Short Introduction <span class="required">*</span></label>
+                        <textarea name="introduction" required placeholder="Tell us a little about yourself..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-save"></i> Save Profile
+                    </button>
+                </form>
+                <div class="form-footer">
+                    Want to see existing profiles? <a href="ProfileServlet?action=view">View All Profiles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
