@@ -123,17 +123,6 @@ Download **mysql-connector-j-8.x.x.jar** and place it in:
 
 ---
 
-## 🖼️ Screenshots
-
-| Page | Description |
-|---|---|
-| `index.html` | Add Profile form |
-| `profile.jsp` | Profile saved confirmation card |
-| `viewProfiles.jsp` | All profiles in card grid with Search, Edit, Delete |
-| `editProfile.jsp` | Edit profile form |
-
----
-
 ## 📚 MVC Architecture
 
 ```
