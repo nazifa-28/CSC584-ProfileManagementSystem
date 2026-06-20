@@ -138,6 +138,9 @@ User → index.html (View)
 ```
 ## Screenshots
 
+### Home Page
+![Home Page](screenshots/home.png)
+
 ### Create Profile
 ![Create Profile](screenshots/create%20profile.png)
 
@@ -152,6 +155,3 @@ User → index.html (View)
 
 ### Delete Profile
 ![Delete Profile](screenshots/delete%20profile.png)
-
-### Home Profile
-![Home Profile](home/search%20home.png)
