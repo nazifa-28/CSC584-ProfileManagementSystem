@@ -151,7 +151,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand">
+        <a href="home.html" class="navbar-brand">
             <i class="fas fa-id-card"></i> Profile Management System
         </a>
         <div class="navbar-nav">
