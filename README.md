@@ -147,8 +147,11 @@ User → index.html (View)
 ### Edit Profile
 ![Edit Profile](screenshots/edit%20profile.png)
 
+### Search Profile
+![Search Profile](screenshots/search%20nama.png)
+
 ### Delete Profile
 ![Delete Profile](screenshots/delete%20profile.png)
 
-### Search Profile
-![Search Profile](screenshots/search%20nama.png)
+### Home Profile
+![Home Profile](home/search%20home.png)
